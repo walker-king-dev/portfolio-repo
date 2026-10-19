@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PossessionPoint</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+    <h1>PossessionPoint</h1>
+    <p class="subtitle">A basketball pace and efficiency calculator</p>
+  </header>
+   
+  <main>
+        <form id="game-form" novalidate>
+            <div class="teams">
+
+                <fieldset>
+                    <legend>Your team</legend>
+
+                    <label for="team-pts">Points (PTS)</label>
+                    <input id="team-pts" name="team-pts" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="team-fga">Field goal attempts (FGA)</label>
+                    <input id="team-fga" name="team-fga" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="team-oreb">Offensive rebounds (OREB)</label>
+                    <input id="team-oreb" name="team-oreb" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="team-tov">Turnovers (TOV)</label>
+                    <input id="team-tov" name="team-tov" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="team-fta">Free throw attempts (FTA)</label>
+                    <input id="team-fta" name="team-fta" type="number" inputmode="numeric" min="0" step="1">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Opponent</legend>
+
+                    <label for="opp-pts">Points (PTS)</label>
+                    <input id="opp-pts" name="opp-pts" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="opp-fga">Field goal attempts (FGA)</label>
+                    <input id="opp-fga" name="opp-fga" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="opp-oreb">Offensive rebounds (OREB)</label>
+                    <input id="opp-oreb" name="opp-oreb" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="opp-tov">Turnovers (TOV)</label>
+                    <input id="opp-tov" name="opp-tov" type="number" inputmode="numeric" min="0" step="1">
+
+                    <label for="opp-fta">Free throw attempts (FTA)</label>
+                    <input id="opp-fta" name="opp-fta" type="number" inputmode="numeric" min="0" step="1">
+                </fieldset>
+
+            </div>
+
+            <!-- Empty for now. Step 2 will fill this with error messages. -->
+            <div id="error-area" role="alert"></div>
+
+            <button type="submit">Calculate</button>
+        </form>
+        <section id="results" aria-live="polite"></section>
+        
+            <div id="save-area" hidden>
+      <label for="game-label">Game label (optional)</label>
+      <input id="game-label" type="text" maxlength="60" autocomplete="off">
+      <button type="button" id="save-button">Save this game</button>
+    </div>
+
+    <section id="saved" aria-labelledby="saved-heading">
+      <h2 id="saved-heading" tabindex="-1">Saved games</h2>
+      <p id="saved-status" role="status"></p>
+      <p id="saved-empty">No saved games yet. Calculate a game, then save it.</p>
+      <ul id="saved-list"></ul>
+    </section>
+    
+    </main>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
